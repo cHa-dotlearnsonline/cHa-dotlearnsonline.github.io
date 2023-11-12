@@ -13,7 +13,7 @@ function fetchInsta() {
     }
     let request_url = "https://api.instagram.com/oauth/access_token/"
     fetch(request_url,{
-        body: JSON.stringify(data),
+        body: new URLSearchParams(data),
         headers: {
             'dataType':'json',
             'Content-Type': 'application/x-www-form-urlencoded',
