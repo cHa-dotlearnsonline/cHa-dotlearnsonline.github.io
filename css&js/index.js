@@ -16,9 +16,6 @@ function fetchInsta() {
         body: new URLSearchParams(data),
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-            "Access-Control-Allow-Headers" : "Content-Type",
-              "Access-Control-Allow-Origin": "*",
-             "Access-Control-Allow-Methods": "OPTIONS,POST,GET,PATCH"
         },
         mode: 'no-cors',
         method: 'POST',
