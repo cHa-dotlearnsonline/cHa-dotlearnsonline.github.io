@@ -23,6 +23,8 @@ function fetchInsta() {
     }
     ).then(response => {
         if (response.status == 200) {
+            showing = document.querySelector(".display")
+            showing.insertAdjacentHTML('beforeend', response.text())
             console.log(response.text())
         } else {
             throw new Error('Something went wrong on api server!');
