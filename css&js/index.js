@@ -1,4 +1,4 @@
-fetchInsta()
+fetchInsta();
 function fetchInsta() {
     let displayer = document.querySelector(".display")
     let url_to_fetch ="https://instagram.com/oauth/authorize?client_id=719783843382486&redirect_uri=https://cha-dotlearnsonline.github.io/&scope=user_profile,user_media&response_type=code"
@@ -11,7 +11,7 @@ function fetchInsta() {
         "redirect_uri": "https://cha-dotlearnsonline.github.io/",
         "code":code
     }
-    let request_url = `https://api.instagram.com/oauth/access_token`
+    let request_url = "https://api.instagram.com/oauth/access_token/"
     fetch(request_url,{
         body: JSON.stringify(data),
         headers: {
