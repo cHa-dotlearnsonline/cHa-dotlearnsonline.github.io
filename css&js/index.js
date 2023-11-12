@@ -11,15 +11,15 @@ function fetchInsta() {
         "redirect_uri": "https://cha-dotlearnsonline.github.io/",
         "code":code
     }
-    let request_url = "https://api.instagram.com/oauth/access_token"
+    let request_url = `https://api.instagram.com/oauth/access_token?client_id=719783843382486&client_secret=f59e49151cc7ef20eaf2af95053ecdeb&grant_type=authorization_code&redirect_uri=https://cha-dotlearnsonline.github.io/&code=${code}`
     fetch(request_url, {
-        body: JSON.stringify(data),
-        headers: {
-            'dataType': 'json',
-            'content-type': 'application/json'
-        },
+        // body: JSON.stringify(data),
+        // headers: {
+        //     'dataType': 'json',
+        //     'content-type': 'application/json'
+        // },
         method: 'POST',
-        redirect: 'follow'
+        // redirect: 'follow'
     }
     ).then(response => {
         if (response.status == 200) {
