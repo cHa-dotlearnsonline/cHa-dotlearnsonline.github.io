@@ -16,7 +16,7 @@ function fetchInsta() {
         body: new URLSearchParams(data),
         headers: {
             'dataType':'json',
-            'Content-Type': 'application/x-www-form-urlencoded',
+            'Content-Type': 'application/json',
         },
         mode: 'no-cors',
         method: 'POST',
