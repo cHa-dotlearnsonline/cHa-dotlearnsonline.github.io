@@ -11,25 +11,18 @@ function fetchInsta() {
         "redirect_uri": "https://cha-dotlearnsonline.github.io/",
         "code":code
     }
-    let request_url = `https://api.instagram.com/oauth/access_token?client_id=719783843382486&client_secret=f59e49151cc7ef20eaf2af95053ecdeb&grant_type=authorization_code&redirect_uri=https://cha-dotlearnsonline.github.io/&code=${code}`
+    let request_url = `https://api.instagram.com/oauth/access_token`
     fetch(request_url, {
-        // body: JSON.stringify(data),
-        // headers: {
-        //     'dataType': 'json',
-        //     'content-type': 'application/json'
-        // },
+        body: new URLSearchParams(data),
+        headers: {
+            'content-type': 'application/x-www-form-urlencoded'
+        },
         method: 'POST',
         // redirect: 'follow'
     }
-    ).then(response => {
-        if (response.status == 200) {
-            showing = document.querySelector(".display")
-            showing.insertAdjacentHTML('beforeend', response.text())
-            console.log(response.text())
-        } else {
-            throw new Error('Something went wrong on api server!');
-        }
-    } ).catch(error => {
+    ).then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => {
         console.error(error)
     })
 }
