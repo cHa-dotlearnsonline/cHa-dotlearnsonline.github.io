@@ -15,8 +15,9 @@ function fetchInsta() {
     fetch(request_url, {
         body: new URLSearchParams(data),
         headers: {
-            'content-type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/x-www-form-urlencoded'
         },
+        mode: 'no-cors',
         method: 'POST',
         // redirect: 'follow'
     }
